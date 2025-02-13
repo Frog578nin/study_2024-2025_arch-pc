@@ -3,10 +3,10 @@
 SECTION .data
     msg_ask: db "Как Вас зовут?", 0
     msg_hello: db "Меня зовут ", 0
-    filename: db "name.txt", 0 ; Имя файла (может быть изменено в коде)
+    filename: db "name.txt", 0 ; Имя файла 
 
 SECTION .bss
-    name_buffer: resb 256 ; Буфер для ввода имени (достаточно большой)
+    name_buffer: resb 256 ; Буфер для ввода имени 
 
 SECTION .text
     global _start
@@ -18,7 +18,7 @@ _start:
 
     ; ---- 2. Ввод имени ----
     mov ecx, name_buffer  ; Адрес буфера
-    mov edx, 255        ; Максимальная длина (оставляем место для завершающего нуля)
+    mov edx, 255        ; Максимальная длина
     call sread
 
     ; ---- 3. Создание файла ----
